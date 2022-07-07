@@ -5,7 +5,9 @@
  */
 package pkg20220607_aulapv_proj2;
 
+import java.awt.GridLayout;
 import javax.swing.JFrame;
+import javax.swing.JPanel;
 
 /**
  *
@@ -15,11 +17,18 @@ public class MainFrame extends JFrame {
     //Dois paineis p1 e p2
     
     public MainFrame(){
-        //definir tamanho 1200 x 600
-        //resizable false
-        //exit on close operation
-        // grid layout
         
+        setSize(1200,600); //definir tamanho 1200 x 600
+        setResizable(false); //resizable false
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); //exit on close operation
+        
+        // grid layout
+        GridLayout layout = new GridLayout(1,2);
+        setLayout(layout);
+        
+        PainelEsquerdo pe = new PainelEsquerdo();
+        add(pe,0);        
+        add(new JPanel(), 1); 
         
     }
     
