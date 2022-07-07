@@ -10,6 +10,7 @@ import java.awt.FlowLayout;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
+import javax.swing.JButton;
 
 /**
  *
@@ -18,6 +19,13 @@ import javax.swing.JTextField;
 public class PainelEsquerdo extends JPanel {
     
     JTextField x,y,w,h;
+    JButton bOk;
+    
+    JLabel refObj; 
+    
+    public void setRefObj(JLabel ref){
+        this.refObj = ref;
+    }
     
     public PainelEsquerdo(){
         
@@ -34,6 +42,26 @@ public class PainelEsquerdo extends JPanel {
         add(new JLabel("h"));
         h = new JTextField(50);
         add(h);
+        
+        bOk = new JButton("OK");
+        
+        bOk.addActionListener(
+        e -> {
+            int xi, yi, wi, hi;
+            xi = Integer.parseInt(x.getText());
+            yi = Integer.parseInt(y.getText());
+            wi = Integer.parseInt(w.getText());
+            hi = Integer.parseInt(h.getText());
+            
+            refObj.setLocation(xi, yi);
+            refObj.setSize(wi,hi);
+            
+            
+        }
+        );
+        
+        
+        add(bOk);
         
         this.setBackground(Color.red);
     

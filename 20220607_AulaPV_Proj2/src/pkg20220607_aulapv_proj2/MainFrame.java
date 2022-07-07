@@ -5,8 +5,10 @@
  */
 package pkg20220607_aulapv_proj2;
 
+import java.awt.Color;
 import java.awt.GridLayout;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 /**
@@ -15,6 +17,8 @@ import javax.swing.JPanel;
  */
 public class MainFrame extends JFrame {
     //Dois paineis p1 e p2
+    JPanel pDireito;
+    JLabel lObj;
     
     public MainFrame(){
         
@@ -28,7 +32,20 @@ public class MainFrame extends JFrame {
         
         PainelEsquerdo pe = new PainelEsquerdo();
         add(pe,0);        
-        add(new JPanel(), 1); 
+       
+        pDireito = new JPanel();
+        pDireito.setLayout(null);
+        
+        lObj = new JLabel();
+        lObj.setSize(10, 10);
+        lObj.setLocation(200, 200);
+        lObj.setBackground(Color.BLUE);
+        lObj.setOpaque(true);
+        
+        pDireito.add(lObj);
+        add(pDireito,1);    
+        
+        pe.setRefObj(lObj);
         
     }
     
